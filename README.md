@@ -37,8 +37,8 @@ An easy way to setup users and password is pending. For now the server runs with
 
 ## Contributions and credits
 
-This project is based on the [ftpd gem by Wayne Conrad](https://github.com/wconrad/ftpd/).
-If you want to contribute to this project, just fork it and create a pull request. Also, feel free to report issues on the [issues section](issues).
+- This project is based on the [ftpd gem by Wayne Conrad](https://github.com/wconrad/ftpd/).
+- If you want to contribute to this project, just fork it and create a pull request. Also, feel free to report issues on the [issues section](issues).
 
 ## License
 
