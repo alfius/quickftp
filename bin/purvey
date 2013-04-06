@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+require 'ftpd'
+require 'purvey'
+require 'pathname'
+require 'logger'
+
+trap('SIGINT') { throw :ctrl_c }
+
+def get_argv(option)
+  value = nil
+  if option_index = ARGV.index(option)
+    value = ARGV[option_index + 1]
+    ARGV.slice!(option_index..option_index+1)
+  end
+  value
+end
+
+host = get_argv('-h')
+port = get_argv('-p').to_i
+
+if ARGV.any? {|f| f == '--help'}
+  # help mode
+  puts 'Usage:'
+  puts '  purvey [path/to/directory] [-h HOST] [-p PORT]'
+else
+  path = ARGV.first || '.'
+  path = Pathname.new(path).realpath.to_s
+
+  driver = Purvey::Driver.new(path)
+  server = Ftpd::FtpServer.new(driver)
+  server.server_name = "Purvey"
+  server.server_version = Purvey::VERSION
+  server.log = Logger.new(STDOUT)
+  server.interface = host if host
+  server.port = port if port
+  server.start
+
+  puts "#{server.server_name} #{server.server_version}"
+  puts "Server listening on #{server.interface}:#{server.bound_port}"
+  puts "Serving all files under '#{path}'"
+  puts "Press Ctrl+C to stop"
+  begin
+    sleep
+  rescue Exception
+  end
+end
