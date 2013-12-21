@@ -1,5 +1,7 @@
 # Purvey
 
+<a href="http://www.omniref.com/ruby/gems/purvey"><img src="http://assets2.omniref.com/assets/logo-1e25ba89780a42da4556dd96c03ac954.png" height="18" width="75"></a>
+
 Purvey is a command line application that allows to quickly start an ftp server without worrying about configuration. This makes it a handy tool to transfer files easily. It's not intended to be used in public servers.
 
 ## Installation
