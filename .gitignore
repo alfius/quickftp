@@ -1,0 +1,5 @@
+.rvmrc
+.env
+.ruby-version
+.rbenv-gemsets
+*.gem
