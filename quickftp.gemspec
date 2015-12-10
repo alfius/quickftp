@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_runtime_dependency 'ftpd', '~> 0.6.0'
+  gem.add_runtime_dependency 'ftpd', '~> 1.1.1'
   gem.add_development_dependency 'minitest', '~> 5.8', '>= 5.8.3'
   gem.add_development_dependency 'rake', '~> 10.4', '>= 10.4.2'
 end

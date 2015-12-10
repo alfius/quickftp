@@ -2,13 +2,13 @@ PATH
   remote: .
   specs:
     quickftp (0.0.1)
-      ftpd (~> 0.6.0)
+      ftpd (~> 1.1.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    ftpd (0.6.0)
-      memoizer (~> 1.0.1)
+    ftpd (1.1.1)
+      memoizer (~> 1.0)
     memoizer (1.0.1)
     minitest (5.8.3)
     rake (10.4.2)
