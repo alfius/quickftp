@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     quickftp (0.0.1)
-      ftpd (~> 1.1.1)
+      ftpd (~> 1.1, >= 1.1.1)
 
 GEM
   remote: https://rubygems.org/
