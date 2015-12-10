@@ -1,6 +1,7 @@
 # Quickftp
 
-Quickftp is a command line application that allows to quickly start an ftp server without worrying about configuration. This makes it a handy tool to transfer files easily. It's not intended to be used in public servers.
+Quickftp is a command line application that allows to quickly start an ftp server without worrying about configuration. This makes it a handy tool to transfer files easily.
+Although the server is stable, it's not intended to be used for public servers. This gem is based on the [ftpd gem by Wayne Conrad](https://github.com/wconrad/ftpd/), so you can find more information about reliability and the protocol internals in the gem documentation.
 
 ## Installation
 
@@ -30,10 +31,6 @@ quickftp -p 3002
 # start the server in 192.168.1.1:9000 and serve files from /tmp/dir:
 quickftp /tmp/dir -h 192.168.1.1 -p 9000
 ```
-
-## TODO
-### Authentication
-An easy way to setup users and password is pending. For now the server runs without any kind of authentication.
 
 ## Contributions and credits
 

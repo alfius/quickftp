@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    quickftp (0.0.1)
+    quickftp (0.1.0)
       ftpd (~> 1.1, >= 1.1.1)
 
 GEM
