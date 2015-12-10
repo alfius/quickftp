@@ -1,13 +1,11 @@
-# Purvey
+# Quickftp
 
-<a href="http://www.omniref.com/ruby/gems/purvey"><img src="http://assets2.omniref.com/assets/logo-1e25ba89780a42da4556dd96c03ac954.png" height="18" width="75"></a>
-
-Purvey is a command line application that allows to quickly start an ftp server without worrying about configuration. This makes it a handy tool to transfer files easily. It's not intended to be used in public servers.
+Quickftp is a command line application that allows to quickly start an ftp server without worrying about configuration. This makes it a handy tool to transfer files easily. It's not intended to be used in public servers.
 
 ## Installation
 
 ```bash
-gem install purvey
+gem install quickftp
 ```
 
 ## Usage
@@ -15,7 +13,7 @@ gem install purvey
 To simply start the server at any available port serving the files from the current directory, run:
 
 ```bash
-purvey
+quickftp
 ```
 
 ## Options
@@ -27,10 +25,10 @@ purvey
 
 ```bash
 # start the server in localhost, under port 3002 and files from the current directory:
-purvey -p 3002
+quickftp -p 3002
 
 # start the server in 192.168.1.1:9000 and serve files from /tmp/dir:
-purvey /tmp/dir -h 192.168.1.1 -p 9000
+quickftp /tmp/dir -h 192.168.1.1 -p 9000
 ```
 
 ## TODO

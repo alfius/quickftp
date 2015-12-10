@@ -1,9 +1,9 @@
-require 'rubygems'
-require 'rspec/core/rake_task'
+require 'bundler/gem_tasks'
+require 'rake/testtask'
 
-task default: :spec
-
-RSpec::Core::RakeTask.new do |task|
-  task.rspec_opts = ["-c", "-f progress", "-r ./spec/spec_helper.rb"]
-  task.pattern    = 'spec/**/*_spec.rb'
+Rake::TestTask.new do |t|
+  t.libs << 'test'
+  t.test_files = FileList['test/**/test*.rb']
 end
+
+task :default => [:test]

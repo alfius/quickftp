@@ -1,4 +1,4 @@
-module Purvey
+module Quickftp
   class Driver
     def initialize(dir)
       @dir = dir

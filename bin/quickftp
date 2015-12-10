@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'ftpd'
-require 'purvey'
+require 'quickftp'
 require 'pathname'
 require 'logger'
 
@@ -22,15 +22,15 @@ port = get_argv('-p').to_i
 if ARGV.any? {|f| f == '--help'}
   # help mode
   puts 'Usage:'
-  puts '  purvey [path/to/directory] [-h HOST] [-p PORT]'
+  puts '  quickftp [path/to/directory] [-h HOST] [-p PORT]'
 else
   path = ARGV.first || '.'
   path = Pathname.new(path).realpath.to_s
 
-  driver = Purvey::Driver.new(path)
+  driver = Quickftp::Driver.new(path)
   server = Ftpd::FtpServer.new(driver)
-  server.server_name = "Purvey"
-  server.server_version = Purvey::VERSION
+  server.server_name = "Quickftp"
+  server.server_version = Quickftp::VERSION
   server.log = Logger.new(STDOUT)
   server.interface = host if host
   server.port = port if port
