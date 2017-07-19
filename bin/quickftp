@@ -18,16 +18,18 @@ end
 
 host = get_argv('-h')
 port = get_argv('-p').to_i
+user = get_argv('--user')
+password = get_argv('--password')
 
 if ARGV.any? {|f| f == '--help'}
   # help mode
   puts 'Usage:'
-  puts '  quickftp [path/to/directory] [-h HOST] [-p PORT]'
+  puts '  quickftp [path/to/directory] [-h HOST] [-p PORT] [--user USER] [--password PASSWORD]'
 else
   path = ARGV.first || '.'
   path = Pathname.new(path).realpath.to_s
 
-  driver = Quickftp::Driver.new(path)
+  driver = Quickftp::Driver.new({ dir: path, user: user, password: password })
   server = Ftpd::FtpServer.new(driver)
   server.server_name = "Quickftp"
   server.server_version = Quickftp::VERSION

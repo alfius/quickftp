@@ -1,11 +1,17 @@
 module Quickftp
   class Driver
-    def initialize(dir)
-      @dir = dir
+    def initialize(**options)
+      @dir = options[:dir]
+      @user = options[:user]
+      @password = options[:password]
     end
 
     def authenticate(user, password)
-      true
+      if @user && @password
+        @user == user && @password == password
+      else
+        true
+      end
     end
 
     def file_system(user)
